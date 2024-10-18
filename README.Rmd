@@ -134,9 +134,6 @@ For example plotID contains siteID, habitat, species and plot number: LY_O_VV_1,
 | other variables  | Other important variables in the dataset | remark, data collector, weather, flag |
 |  |  |  |
 | **Gradient study** |  |  |
-
-date	ANO_flatID	ANO_pointID	collector	habitat	NiN_type	species	individual_nr	plant_height_cm	length_lb_cm	nr_segments_lb	segment	length_mm	nr_leaves	nr_scars	nr_branch_scars	nr_side_branches	nr_fruits	leaf_weight	stem_weight	branches_weight	fruit_weight	sidebranches_weight	remarks										
-
 | date  | Date of data collection| yyyy-mm-dd; do not split year, month and day into several columns |
 | year  | Year of data collection| yyyy; sometimes there is no specific date, then year can be used |
 | siteID  | ANO_flatID, Durin siteID_habitatID, Mika's own system => VCG siteID |  |
