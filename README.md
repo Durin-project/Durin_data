@@ -18,7 +18,9 @@ available after the end of the project on [OSF](https://osf.io/f4v9t/).
 For now the data is only available to the project partners.
 
 All R code for the cleaning the raw data is available on the [Durin
-GitHub](https://github.com/Durin-project).
+GitHub](https://github.com/Durin-project). Code pushed to GitHub should
+be clean, tested that it does what it is supposed to do and run on any
+computer (e.g. no absolute path).
 
 The data documentation, including a draft for the data paper is
 available
@@ -51,11 +53,11 @@ habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 | File name | Project_Status_Study_Approach_Response_Year(s).Extension | DURIN_clean_gradient_field_cflux_2023-2025.csv |
 |  | Project | DURIN |
 |  | Status | raw or clean |
-|  | Study | *4corner*: study on the 4 main Durin sites; *droughtNet*: droughtNet experiment at Lygra and Tjotta (previously part of Landpress); *gradient*: gradient study between 4 corners; *nutrient*: nutrient experiment at Lygra; *climate_chamber*: climate chamber experiment in Oslo? |
+|  | Study | *4Corners*: study on the 4 main Durin sites; *DroughtNet*: droughtNet experiment at Lygra and Tjotta (previously part of Landpress); *Gradient*: gradient study between 4 corners; *Nutrient*: nutrient experiment at Lygra; *ClimateChamber*: climate chamber experiment in Oslo? |
 |  | Approach | field, lab, molecular, other |
 |  | Response | trait, biomass, flux, etc. |
 |  |  |  |
-| **4corner study** |  |  |
+| **4corners** |  |  |
 | date | Date of data collection | yyyy-mm-dd; do not split year, month and day into several columns |
 | year | Year of data collection | yyyy; sometimes there is no specific date, then year can be used |
 | site_name | Full site name | Lygra, Sogndal, Senja, Kautokeino and Tjotta |
@@ -80,7 +82,7 @@ habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 | year | Year of data collection | yyyy; sometimes there is no specific date, then year can be used |
 | site_name | Site name | Lygra, Tjotta |
 | siteID | Unique siteID, first 2 letters of site_name. | LY, TJ |
-| … | … | North, South |
+| north_south | Location according to latitude | North, South |
 | habitat | Open habitat | Open |
 | age_class | Age class of the vegetation representing post-fire successional stages. | pioneer, building, mature |
 | age_classID | Age class ID of the vegetation representing post-fire successional stages. | PIO, BUI, MAT |
