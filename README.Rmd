@@ -53,6 +53,46 @@ Code pushed to GitHub should be clean, tested that it does what it is supposed t
 
 The data documentation, including a draft for the data paper is available [here](https://docs.google.com/document/d/13Mky4gZfCzHIZl82zQKX6nb2vRneZXDRVDAmp0a3gdA/edit?usp=sharing) (only available for authors), and the **data dictionaries** are in this below in this readme file.
 
+### Meta data
+
+To help you with the correct naming convention use the function from the dataDocumentation package to create the meta data.
+Install the dataDocumentation R package like this:
+
+```{r install, eval=FALSE, echo=TRUE}
+
+# if needed install the remotes package
+install.packages("remotes")
+
+# then install the dataDocumentation package
+remotes::install_github("audhalbritter/dataDocumentation")
+
+# and load it
+library(dataDocumentation)
+
+```
+
+The function `create_durin_meta_data()` creates meta data.
+The meta data can be made for the 4Corners, DroughtNet or Nutrient study.
+Use the argument `study` to define which meta data you want. *4Corners*: study on the 4 main Durin sites; DroughtNet: *droughtNet* experiment at Lygra and Tjotta; *Nutrient*: nutrient experiment at Lygra
+
+```{r meta, eval=FALSE, echo=TRUE}
+
+my_meta <- create_durin_meta_data(study = "4Corners")
+my_meta
+
+```
+
+If you want to save the metadata as a csv file, set csv_output = TRUE and you can choose a file name (not mandatory).
+The data will be stored in the project directory.
+The file name always contains Durin and the study, e.g. Durin_4Corners_filename.csv.
+
+```{r csv, eval=FALSE, echo=TRUE}
+
+create_durin_meta_data(study = "4Corners", csv_output = TRUE, filename = "biomass")
+
+```
+
+
 ### Naming conventions for the clean datasets and files
 
 We use **snake_case** for names and coding.
@@ -78,7 +118,7 @@ For example plotID contains siteID, habitat, species and plot number: LY_O_VV_1,
 | | Approach | field, lab, molecular, other |
 | | Response | trait, biomass, flux, etc. |
 |  |  |  |
-| **4corners**  |  |
+| **4Corners**  |  |
 | date  | Date of data collection| yyyy-mm-dd; do not split year, month and day into several columns |
 | year  | Year of data collection| yyyy; sometimes there is no specific date, then year can be used |
 | site_name  | Full site name | Lygra, Sogndal, Senja, Kautokeino and Tjotta |
@@ -88,14 +128,14 @@ For example plotID contains siteID, habitat, species and plot number: LY_O_VV_1,
 | habitat  | Open versus forested habitat  | Open, Forested |
 | plot_nr  | Plot number, numeric value from 1-5. | 1-5 |
 | plotID  | Unique plot ID as a combination of siteID, habitat, speciesID and plot number | LY_O_VV_1, KA_F_VM_5 |
-| species  | Vascular plant taxon names follow for Norway Elven et al. (2022). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
+| species  | Vascular plant taxon names follow Elven et al. (2022). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
 | speciesID  | 2 letter abbreviation of species | VM, VV, CV, EN, BN |
 | plant_nr  | Plant number, numeric value | 1-n |
 | plantID  | plantID is not defined but can be constructed by concatenate siteID, etc. | ... |
 | segment  | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in 2022 | S24, S23, S22 |
 | variable  | Response variable(s) | e.g. cover, biomass, Reco |
 | value  | Value of response variable(s) | numeric value |
-| unit  | Unit for response variable(s) | %, µmol m−2 s−1 |
+| unit  | Unit for response variable(s) | percent, µmol m−2 s−1 |
 | other variables  | Other important variables in the dataset | remark, data collector, weather, flag |
 |  |  |  |
 | **DroughtNet experiment** |  |  |
@@ -103,19 +143,20 @@ For example plotID contains siteID, habitat, species and plot number: LY_O_VV_1,
 | year  | Year of data collection| yyyy; sometimes there is no specific date, then year can be used |
 | site_name  | Site name | Lygra, Tjotta |
 | siteID  | Unique siteID, first 2 letters of site_name. | LY, TJ |
-| north_south  | Location according to latitude  | North, South |
+| geography  | Location according to latitude  | North, South |
 | habitat  | Open habitat  | Open |
-| age_class  | Age class of the vegetation representing post-fire successional stages. | pioneer, building, mature |
+| age_class  | Age class of the vegetation representing post-fire successional stages. | Pioneer, Building, Mature |
 | age_classID  | Age class ID of the vegetation representing post-fire successional stages. | PIO, BUI, MAT |
-| drought_treatment | Drought treatment using rain-out shelters that reduce roof cover by 0 = ambient, 60 = moderate,  or 90% = extreme | ambient, moderate, extreme|
+| drought_treatment | Drought treatment using rain-out shelters that reduce roof cover by 0 = ambient, 60 = moderate,  or 90% = extreme | Ambient, Moderate, Extreme|
+| drought_treatmentID | Drought treatment ID using first three letters of drought_treatment | AMB, MOD, EXT|
 | plot_nr | Unique plotID from the DroughtNet frames in the field. Correspond with Landpress naming.  | 1.1,1.2,1.3 - 9.1,9.2,9.3 |
-| plotID | Unique plot ID as a combination of siteID, age_class (3 first letters), drought_treatment (3 first letters) and plot number  | LY_PIO_AMB_1.3, LY_MAT_EXT_9.1 (note these IDs might not exist!) |
-| species  | Vascular plant taxon names follow for Norway Elven et al. (2022). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
+| plotID | Unique plotID as a combination of siteID, age_classID, drought_treatmentID and plot_nr  | LY_PIO_AMB_1.3, LY_MAT_EXT_9.1 (note these IDs might not exist!) |
+| species  | Vascular plant taxon names follow Elven et al. (2022). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
 | speciesID  | 2 letter abbreviation of species | VM, VV, CV, EN |
 | segment  | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in 2022 | S24, S23, S22 |
 | variable  | Response variable(s) | e.g. cover, biomass, Reco |
 | value  | Value of response variable(s) | numeric value |
-| unit  | Unit for response variable(s) | %, µmol m−2 s−1 |
+| unit  | Unit for response variable(s) | percent, µmol m−2 s−1 |
 | other variables  | Other important variables in the dataset | remark, data collector, weather, flag |
 |  |  |  |
 | **Nutrient experiment** |  |  |
@@ -123,29 +164,29 @@ For example plotID contains siteID, habitat, species and plot number: LY_O_VV_1,
 | year  | Year of data collection| yyyy; sometimes there is no specific date, then year can be used |
 | site_name  | Site name | Lygra |
 | siteID  | Unique siteID, first 2 letters of site_name. | LY |
-| habitat  | Open habitat  | open |
-| age_class  | Vegetation representing post-fire successional stages. | building |
-| nitrogen_addition  | Added level of nitrogen kg ha-1 y-1 | 0, 1, 5, 10, 25 |
+| habitat  | Open habitat  | Open |
+| age_class  | Vegetation representing post-fire successional stages. | Building |
+| nitrogen_addition  | Added level of nitrogen in kg ha-1 y-1 | 0, 1, 5, 10, 25 |
 | block_nr  | Block number as N plus numeric value | N1, N2, N3, N4, N5 |
-| plotID | Unique plotID is combination of block number and nitrogen addition level | e.g. N1-10, N5-1 |
+| plotID | Unique plotID is combination of block number and nitrogen addition level combined by a dash | e.g. N1-10, N5-1 |
 | segment  | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in 2022 | S24, S23, S22 |
 | variable  | Response variable(s) | e.g. cover, biomass, Reco |
 | value  | Value of response variable(s) | numeric value |
-| unit  | Unit for response variable(s) | %, µmol m−2 s−1 |
+| unit  | Unit for response variable(s) | percent, µmol m−2 s−1 |
 | other variables  | Other important variables in the dataset | remark, data collector, weather, flag |
 |  |  |  |
 | **Gradient study** |  |  |
 | date  | Date of data collection| yyyy-mm-dd; do not split year, month and day into several columns |
 | year  | Year of data collection| yyyy; sometimes there is no specific date, then year can be used |
-| siteID  | ANO_flatID, Durin siteID_habitatID, Mika's own system => VCG siteID |  |
+| siteID  | ANO_flatID, Durin siteID_habitatID, VCG siteID | e.g. 239, SE_O, Vikesland |
 | ANO_pointID  | Only relevant for ANO flate. Numeric value from 11-66 | e.g. 11, 12 |
 | NiN_type  | NiN type | e.g. T31-C-1 |
 | latitude_N  | Decimal degree latitude | 69.54 °N |
 | longitude_E  | Decimal degree longitude | 4.54 °E |
-| habitat  | Open versus forested habitat, only relevant for Durin and VCG  | open, forested |
-| species  | Vascular plant taxon names follow for Norway Lid & Lid (Lid J & Lid, 2010). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
+| habitat  | Open versus forested habitat, only relevant for Durin and VCG  | Open, Forested |
+| species  | Vascular plant taxon names follow Elven et al. (2022). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
 | speciesID  | 2 letter abbreviation of species | VM, VV |
-| individual_nr  | Individual number as numeric value | 1-n |
+| individual_nr  | Individual number is a numeric value | 1-n |
 | segment  | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in 2022 | S24, S23, S22 |
 | collector  | Full name separated by underscore of the person that collected the data. | I, me and myself |
 | other variables  | Other variables | ... |
@@ -195,7 +236,7 @@ The R package **dataDocumentation** that will help you to make the data dictiona
 You can install and load the package as follows:
 
 
-```{r install, eval=FALSE, echo=TRUE}
+```{r install2, eval=FALSE, echo=TRUE}
 
 # if needed install the remotes package
 install.packages("remotes")
