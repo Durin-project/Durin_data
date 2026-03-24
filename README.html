@@ -713,160 +713,548 @@ mistakes. PlotID should contain the higher hierarchical levels such as
 siteID, blockID, treatment, habitat, species etc. For example plotID
 contains siteID, habitat, species and plot number: LY_O_VV_1,
 LY_F_VM_3</p>
-<p>Variable name | Naming convention | Example |<br />
-<strong>4Corners</strong> | |<br />
-date | Date of data collection| yyyy-mm-dd; do not split year, month and
-day into several columns |<br />
-year | Year of data collection| yyyy; sometimes there is no specific
-date, then year can be used |<br />
-site_name | Full site name | Lygra, Sogndal, Senja, Kautokeino and
-Tjotta |<br />
-siteID | Unique siteID, first 2 letters of site_name. | LY, SO, SE, and
-KA, TJ |<br />
-biogeography | Biogeography of the site | Boreal, Sub-arctic |<br />
-oceanity | Oceanity of the site | Coast, Inland |<br />
-habitat | Open versus forested habitat | Open, Forested |<br />
-original_burn_year | Last intentional burn year | yyyy; 2010 |<br />
-recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |<br />
-plot_nr | Plot number, numeric value from 1-5. | 1-5 |<br />
-plotID | Unique plot ID as a combination of siteID, habitat, speciesID
-and plot number | LY_O_VV_1, KA_F_VM_5 |<br />
-species | Vascular plant taxon names follow Elven et al. (2022). We use
-full species names. For field sheets the names can be abbreviated (see
-speciesID), but the clean data should contain the full species name |
-<em>Vaccinium myrtillus</em> |<br />
-speciesID | 2 letter abbreviation of species | VM, VV, CV, EN, BN
-|<br />
-plant_nr | Plant number, numeric value | 1-n |<br />
-plantID | plantID is not defined but can be constructed by concatenate
-siteID, etc. | … |<br />
-segment | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
-2022 | S24, S23, S22 |<br />
-variable | Response variable(s) | e.g. cover, biomass, Reco |<br />
-value | Value of response variable(s) | numeric value |<br />
-unit | Unit for response variable(s) | percent, µmol m−2 s−1 |<br />
-other variables | Other important variables in the dataset | remark,
-data collector, weather, flag |<br />
- | | |<br />
-<strong>DroughtNet experiment</strong> | | |<br />
-date | Date of data collection| yyyy-mm-dd; do not split year, month and
-day into several columns |<br />
-year | Year of data collection| yyyy; sometimes there is no specific
-date, then year can be used |<br />
-site_name | Site name | Lygra, Tjotta |<br />
-siteID | Unique siteID, first 2 letters of site_name. | LY, TJ |<br />
-geography | Location according to latitude | North, South |<br />
-habitat | Open habitat | Open |<br />
-original_burn_year | Last intentional burn year | yyyy; 2010 |<br />
-recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |<br />
-age_class | Age class of the vegetation representing post-fire
-successional stages. | Pioneer, Building, Mature |<br />
-age_classID | Age class ID of the vegetation representing post-fire
-successional stages. | PIO, BUI, MAT |<br />
-drought_treatment | Drought treatment using rain-out shelters that
-reduce roof cover by 0 = ambient, 60 = moderate, or 90% = extreme |
-Ambient, Moderate, Extreme|<br />
-drought_treatmentID | Drought treatment ID using first three letters of
-drought_treatment | AMB, MOD, EXT|<br />
-plot_nr | Unique plotID from the DroughtNet frames in the field.
-Correspond with Landpress naming. | 1.1,1.2,1.3 - 9.1,9.2,9.3 |<br />
-plotID | Unique plotID as a combination of siteID, age_classID,
-drought_treatmentID and plot_nr | LY_PIO_AMB_1.3, LY_MAT_EXT_9.1 (note
-these IDs might not exist!) |<br />
-species | Vascular plant taxon names follow Elven et al. (2022). We use
-full species names. For field sheets the names can be abbreviated (see
-speciesID), but the clean data should contain the full species name |
-<em>Vaccinium myrtillus</em> |<br />
-speciesID | 2 letter abbreviation of species | VM, VV, CV, EN |<br />
-segment | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
-2022 | S24, S23, S22 |<br />
-variable | Response variable(s) | e.g. cover, biomass, Reco |<br />
-value | Value of response variable(s) | numeric value |<br />
-unit | Unit for response variable(s) | percent, µmol m−2 s−1 |<br />
-other variables | Other important variables in the dataset | remark,
-data collector, weather, flag |<br />
- | | |<br />
-<strong>Nutrient experiment</strong> | | |<br />
-date | Date of data collection| yyyy-mm-dd; do not split year, month and
-day into several columns |<br />
-year | Year of data collection| yyyy; sometimes there is no specific
-date, then year can be used |<br />
-site_name | Site name | Lygra |<br />
-siteID | Unique siteID, first 2 letters of site_name. | LY |<br />
-habitat | Open habitat | Open |<br />
-original_burn_year | Last intentional burn year | yyyy; 2010 |<br />
-recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |<br />
-age_class | Vegetation representing post-fire successional stages. |
-Building |<br />
-nitrogen_addition | Added level of nitrogen in kg ha-1 y-1 | 0, 1, 5,
-10, 25 |<br />
-block_nr | Block number as N plus numeric value | N1, N2, N3, N4, N5
-|<br />
-plotID | Unique plotID is combination of block number and nitrogen
-addition level combined by a dash | e.g. N1-10, N5-1 |<br />
-segment | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
-2022 | S24, S23, S22 |<br />
-variable | Response variable(s) | e.g. cover, biomass, Reco |<br />
-value | Value of response variable(s) | numeric value |<br />
-unit | Unit for response variable(s) | percent, µmol m−2 s−1 |<br />
-other variables | Other important variables in the dataset | remark,
-data collector, weather, flag |<br />
- | | |<br />
-<strong>Gradient study</strong> | | |<br />
-date | Date of data collection| yyyy-mm-dd; do not split year, month and
-day into several columns |<br />
-year | Year of data collection| yyyy; sometimes there is no specific
-date, then year can be used |<br />
-siteID | ANO_flatID, Durin siteID_habitatID, VCG siteID | e.g. 239,
-SE_O, Vikesland |<br />
-ANO_pointID | Only relevant for ANO flate. Numeric value from 11-66 |
-e.g. 11, 12 |<br />
-NiN_type | NiN type | e.g. T31-C-1 |<br />
-latitude_N | Decimal degree latitude | 69.54 °N |<br />
-longitude_E | Decimal degree longitude | 4.54 °E |<br />
-habitat | Open versus forested habitat, only relevant for Durin and VCG
-| Open, Forested |<br />
-species | Vascular plant taxon names follow Elven et al. (2022). We use
-full species names. For field sheets the names can be abbreviated (see
-speciesID), but the clean data should contain the full species name |
-<em>Vaccinium myrtillus</em> |<br />
-speciesID | 2 letter abbreviation of species | VM, VV |<br />
-individual_nr | Individual number is a numeric value | 1-n |<br />
-segment | S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
-2022 | S24, S23, S22 |<br />
-collector | Full name separated by underscore of the person that
-collected the data. | I, me and myself |<br />
-other variables | Other variables | … |<br />
- | | |<br />
-<strong>LygraFire</strong> | | |<br />
-date | Date of data collection| yyyy-mm-dd; do not split year, month and
-day into several columns |<br />
-year | Year of data collection| yyyy; sometimes there is no specific
-date, then year can be used |<br />
-original_burn_year | Last intentional burn year | yyyy; 2010 |<br />
-recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |<br />
-site_name | Site name | Lygra, Tjotta |<br />
-siteID | Unique siteID, first 2 letters of site_name. | LY, TJ |<br />
-calluna_NiN_type | NiN type related to Calluna heathlands | e.g. |<br />
-latitude_N | Decimal degree latitude | 69.54 |<br />
-longitude_E | Decimal degree longitude | 4.54 |<br />
-age_class | Age class of the vegetation representing post-fire
-successional stages. | Pioneer, Building, Mature |<br />
-age_classID | Age class ID of the vegetation representing post-fire
-successional stages. | PIO, BUI, MAT |<br />
-species | Vascular plant taxon names follow Elven et al. (2022). We use
-full species names. For field sheets the names can be abbreviated (see
-speciesID), but the clean data should contain the full species name |
-<em>Vaccinium myrtillus</em> |<br />
-speciesID | 2 letter abbreviation of species | VM, VV, CV, EN |<br />
-plant_nr | Plant number, numeric value | 1-n |<br />
-plantID | plantID is not defined but can be constructed by concatenate
-siteID, etc. | … |<br />
-variable | Response variable(s) | e.g. cover, biomass, Reco |<br />
-value | Value of response variable(s) | numeric value |<br />
-unit | Unit for response variable(s) | percent, µmol m−2 s−1 |<br />
-other variables | Other important variables in the dataset | remark,
-data collector, weather, flag |</p>
+<table>
+<thead>
+<tr>
+<th>Variable name</th>
+<th>Naming convention</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4Corners</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date of data collection</td>
+<td>yyyy-mm-dd; do not split year, month and day into several
+columns</td>
+</tr>
+<tr>
+<td>year</td>
+<td>Year of data collection</td>
+<td>yyyy; sometimes there is no specific date, then year can be
+used</td>
+</tr>
+<tr>
+<td>site_name</td>
+<td>Full site name</td>
+<td>Lygra, Sogndal, Senja, Kautokeino and Tjotta</td>
+</tr>
+<tr>
+<td>siteID</td>
+<td>Unique siteID, first 2 letters of site_name.</td>
+<td>LY, SO, SE, and KA, TJ</td>
+</tr>
+<tr>
+<td>biogeography</td>
+<td>Biogeography of the site</td>
+<td>Boreal, Sub-arctic</td>
+</tr>
+<tr>
+<td>oceanity</td>
+<td>Oceanity of the site</td>
+<td>Coast, Inland</td>
+</tr>
+<tr>
+<td>habitat</td>
+<td>Open versus forested habitat</td>
+<td>Open, Forested</td>
+</tr>
+<tr>
+<td>original_burn_year</td>
+<td>Last intentional burn year</td>
+<td>yyyy; 2010</td>
+</tr>
+<tr>
+<td>recent_burn_year</td>
+<td>Last accidential burn date</td>
+<td>yyyy-mm; 2025-12</td>
+</tr>
+<tr>
+<td>plot_nr</td>
+<td>Plot number, numeric value from 1-5.</td>
+<td>1-5</td>
+</tr>
+<tr>
+<td>plotID</td>
+<td>Unique plot ID as a combination of siteID, habitat, speciesID and
+plot number</td>
+<td>LY_O_VV_1, KA_F_VM_5</td>
+</tr>
+<tr>
+<td>species</td>
+<td>Vascular plant taxon names follow Elven et al. (2022). We use full
+species names. For field sheets the names can be abbreviated (see
+speciesID), but the clean data should contain the full species name</td>
+<td><em>Vaccinium myrtillus</em></td>
+</tr>
+<tr>
+<td>speciesID</td>
+<td>2 letter abbreviation of species</td>
+<td>VM, VV, CV, EN, BN</td>
+</tr>
+<tr>
+<td>plant_nr</td>
+<td>Plant number, numeric value</td>
+<td>1-n</td>
+</tr>
+<tr>
+<td>plantID</td>
+<td>plantID is not defined but can be constructed by concatenate siteID,
+etc.</td>
+<td>…</td>
+</tr>
+<tr>
+<td>segment</td>
+<td>S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
+2022</td>
+<td>S24, S23, S22</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>Response variable(s)</td>
+<td>e.g. cover, biomass, Reco</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Value of response variable(s)</td>
+<td>numeric value</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>Unit for response variable(s)</td>
+<td>percent, µmol m−2 s−1</td>
+</tr>
+<tr>
+<td>other variables</td>
+<td>Other important variables in the dataset</td>
+<td>remark, data collector, weather, flag</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DroughtNet experiment</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date of data collection</td>
+<td>yyyy-mm-dd; do not split year, month and day into several
+columns</td>
+</tr>
+<tr>
+<td>year</td>
+<td>Year of data collection</td>
+<td>yyyy; sometimes there is no specific date, then year can be
+used</td>
+</tr>
+<tr>
+<td>site_name</td>
+<td>Site name</td>
+<td>Lygra, Tjotta</td>
+</tr>
+<tr>
+<td>siteID</td>
+<td>Unique siteID, first 2 letters of site_name.</td>
+<td>LY, TJ</td>
+</tr>
+<tr>
+<td>geography</td>
+<td>Location according to latitude</td>
+<td>North, South</td>
+</tr>
+<tr>
+<td>habitat</td>
+<td>Open habitat</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>original_burn_year</td>
+<td>Last intentional burn year</td>
+<td>yyyy; 2010</td>
+</tr>
+<tr>
+<td>recent_burn_year</td>
+<td>Last accidential burn date</td>
+<td>yyyy-mm; 2025-12</td>
+</tr>
+<tr>
+<td>age_class</td>
+<td>Age class of the vegetation representing post-fire successional
+stages.</td>
+<td>Pioneer, Building, Mature</td>
+</tr>
+<tr>
+<td>age_classID</td>
+<td>Age class ID of the vegetation representing post-fire successional
+stages.</td>
+<td>PIO, BUI, MAT</td>
+</tr>
+<tr>
+<td>drought_treatment</td>
+<td>Drought treatment using rain-out shelters that reduce roof cover by
+0 = ambient, 60 = moderate, or 90% = extreme</td>
+<td>Ambient, Moderate, Extreme</td>
+</tr>
+<tr>
+<td>drought_treatmentID</td>
+<td>Drought treatment ID using first three letters of
+drought_treatment</td>
+<td>AMB, MOD, EXT</td>
+</tr>
+<tr>
+<td>plot_nr</td>
+<td>Unique plotID from the DroughtNet frames in the field. Correspond
+with Landpress naming.</td>
+<td>1.1,1.2,1.3 - 9.1,9.2,9.3</td>
+</tr>
+<tr>
+<td>plotID</td>
+<td>Unique plotID as a combination of siteID, age_classID,
+drought_treatmentID and plot_nr</td>
+<td>LY_PIO_AMB_1.3, LY_MAT_EXT_9.1 (note these IDs might not
+exist!)</td>
+</tr>
+<tr>
+<td>species</td>
+<td>Vascular plant taxon names follow Elven et al. (2022). We use full
+species names. For field sheets the names can be abbreviated (see
+speciesID), but the clean data should contain the full species name</td>
+<td><em>Vaccinium myrtillus</em></td>
+</tr>
+<tr>
+<td>speciesID</td>
+<td>2 letter abbreviation of species</td>
+<td>VM, VV, CV, EN</td>
+</tr>
+<tr>
+<td>segment</td>
+<td>S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
+2022</td>
+<td>S24, S23, S22</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>Response variable(s)</td>
+<td>e.g. cover, biomass, Reco</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Value of response variable(s)</td>
+<td>numeric value</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>Unit for response variable(s)</td>
+<td>percent, µmol m−2 s−1</td>
+</tr>
+<tr>
+<td>other variables</td>
+<td>Other important variables in the dataset</td>
+<td>remark, data collector, weather, flag</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Nutrient experiment</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date of data collection</td>
+<td>yyyy-mm-dd; do not split year, month and day into several
+columns</td>
+</tr>
+<tr>
+<td>year</td>
+<td>Year of data collection</td>
+<td>yyyy; sometimes there is no specific date, then year can be
+used</td>
+</tr>
+<tr>
+<td>site_name</td>
+<td>Site name</td>
+<td>Lygra</td>
+</tr>
+<tr>
+<td>siteID</td>
+<td>Unique siteID, first 2 letters of site_name.</td>
+<td>LY</td>
+</tr>
+<tr>
+<td>habitat</td>
+<td>Open habitat</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>original_burn_year</td>
+<td>Last intentional burn year</td>
+<td>yyyy; 2010</td>
+</tr>
+<tr>
+<td>recent_burn_year</td>
+<td>Last accidential burn date</td>
+<td>yyyy-mm; 2025-12</td>
+</tr>
+<tr>
+<td>age_class</td>
+<td>Vegetation representing post-fire successional stages.</td>
+<td>Building</td>
+</tr>
+<tr>
+<td>nitrogen_addition</td>
+<td>Added level of nitrogen in kg ha-1 y-1</td>
+<td>0, 1, 5, 10, 25</td>
+</tr>
+<tr>
+<td>block_nr</td>
+<td>Block number as N plus numeric value</td>
+<td>N1, N2, N3, N4, N5</td>
+</tr>
+<tr>
+<td>plotID</td>
+<td>Unique plotID is combination of block number and nitrogen addition
+level combined by a dash</td>
+<td>e.g. N1-10, N5-1</td>
+</tr>
+<tr>
+<td>segment</td>
+<td>S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
+2022</td>
+<td>S24, S23, S22</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>Response variable(s)</td>
+<td>e.g. cover, biomass, Reco</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Value of response variable(s)</td>
+<td>numeric value</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>Unit for response variable(s)</td>
+<td>percent, µmol m−2 s−1</td>
+</tr>
+<tr>
+<td>other variables</td>
+<td>Other important variables in the dataset</td>
+<td>remark, data collector, weather, flag</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Gradient study</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date of data collection</td>
+<td>yyyy-mm-dd; do not split year, month and day into several
+columns</td>
+</tr>
+<tr>
+<td>year</td>
+<td>Year of data collection</td>
+<td>yyyy; sometimes there is no specific date, then year can be
+used</td>
+</tr>
+<tr>
+<td>siteID</td>
+<td>ANO_flatID, Durin siteID_habitatID, VCG siteID</td>
+<td>e.g. 239, SE_O, Vikesland</td>
+</tr>
+<tr>
+<td>ANO_pointID</td>
+<td>Only relevant for ANO flate. Numeric value from 11-66</td>
+<td>e.g. 11, 12</td>
+</tr>
+<tr>
+<td>NiN_type</td>
+<td>NiN type</td>
+<td>e.g. T31-C-1</td>
+</tr>
+<tr>
+<td>latitude_N</td>
+<td>Decimal degree latitude</td>
+<td>69.54 °N</td>
+</tr>
+<tr>
+<td>longitude_E</td>
+<td>Decimal degree longitude</td>
+<td>4.54 °E</td>
+</tr>
+<tr>
+<td>habitat</td>
+<td>Open versus forested habitat, only relevant for Durin and VCG</td>
+<td>Open, Forested</td>
+</tr>
+<tr>
+<td>species</td>
+<td>Vascular plant taxon names follow Elven et al. (2022). We use full
+species names. For field sheets the names can be abbreviated (see
+speciesID), but the clean data should contain the full species name</td>
+<td><em>Vaccinium myrtillus</em></td>
+</tr>
+<tr>
+<td>speciesID</td>
+<td>2 letter abbreviation of species</td>
+<td>VM, VV</td>
+</tr>
+<tr>
+<td>individual_nr</td>
+<td>Individual number is a numeric value</td>
+<td>1-n</td>
+</tr>
+<tr>
+<td>segment</td>
+<td>S24 = growth in 2024, S23 = growth in 2023, S22 = growth in
+2022</td>
+<td>S24, S23, S22</td>
+</tr>
+<tr>
+<td>collector</td>
+<td>Full name separated by underscore of the person that collected the
+data.</td>
+<td>I, me and myself</td>
+</tr>
+<tr>
+<td>other variables</td>
+<td>Other variables</td>
+<td>…</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LygraFire</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date of data collection</td>
+<td>yyyy-mm-dd; do not split year, month and day into several
+columns</td>
+</tr>
+<tr>
+<td>year</td>
+<td>Year of data collection</td>
+<td>yyyy; sometimes there is no specific date, then year can be
+used</td>
+</tr>
+<tr>
+<td>original_burn_year</td>
+<td>Last intentional burn year</td>
+<td>yyyy; 2010</td>
+</tr>
+<tr>
+<td>recent_burn_year</td>
+<td>Last accidential burn date</td>
+<td>yyyy-mm; 2025-12</td>
+</tr>
+<tr>
+<td>site_name</td>
+<td>Site name</td>
+<td>Lygra, Tjotta</td>
+</tr>
+<tr>
+<td>siteID</td>
+<td>Unique siteID, first 2 letters of site_name.</td>
+<td>LY, TJ</td>
+</tr>
+<tr>
+<td>calluna_NiN_type</td>
+<td>NiN type related to Calluna heathlands</td>
+<td>e.g.</td>
+</tr>
+<tr>
+<td>latitude_N</td>
+<td>Decimal degree latitude</td>
+<td>69.54</td>
+</tr>
+<tr>
+<td>longitude_E</td>
+<td>Decimal degree longitude</td>
+<td>4.54</td>
+</tr>
+<tr>
+<td>age_class</td>
+<td>Age class of the vegetation representing post-fire successional
+stages.</td>
+<td>Pioneer, Building, Mature</td>
+</tr>
+<tr>
+<td>age_classID</td>
+<td>Age class ID of the vegetation representing post-fire successional
+stages.</td>
+<td>PIO, BUI, MAT</td>
+</tr>
+<tr>
+<td>species</td>
+<td>Vascular plant taxon names follow Elven et al. (2022). We use full
+species names. For field sheets the names can be abbreviated (see
+speciesID), but the clean data should contain the full species name</td>
+<td><em>Vaccinium myrtillus</em></td>
+</tr>
+<tr>
+<td>speciesID</td>
+<td>2 letter abbreviation of species</td>
+<td>VM, VV, CV, EN</td>
+</tr>
+<tr>
+<td>plant_nr</td>
+<td>Plant number, numeric value</td>
+<td>1-n</td>
+</tr>
+<tr>
+<td>plantID</td>
+<td>plantID is not defined but can be constructed by concatenate siteID,
+etc.</td>
+<td>…</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>Response variable(s)</td>
+<td>e.g. cover, biomass, Reco</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Value of response variable(s)</td>
+<td>numeric value</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>Unit for response variable(s)</td>
+<td>percent, µmol m−2 s−1</td>
+</tr>
+<tr>
+<td>other variables</td>
+<td>Other important variables in the dataset</td>
+<td>remark, data collector, weather, flag</td>
+</tr>
+</tbody>
+</table>
 <p>Data collections and experiments associated with <strong>plant
 individuals</strong> and/or <strong>leaves</strong> should have unique
 IDs for each individual and leaf. PlantID and leafID should contain

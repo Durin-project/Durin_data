@@ -120,7 +120,8 @@ PlotID should contain the higher hierarchical levels such as siteID, blockID, tr
 For example plotID contains siteID, habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 
 | Variable name  | Naming convention  | Example  |
-| **4Corners**  |  |
+| --- | --- | --- |
+| **4Corners**  |  |  |
 | date  | Date of data collection| yyyy-mm-dd; do not split year, month and day into several columns |
 | year  | Year of data collection| yyyy; sometimes there is no specific date, then year can be used |
 | site_name  | Full site name | Lygra, Sogndal, Senja, Kautokeino and Tjotta |
