@@ -107,8 +107,8 @@ habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 | biogeography | Biogeography of the site | Boreal, Sub-arctic |
 | oceanity | Oceanity of the site | Coast, Inland |
 | habitat | Open versus forested habitat | Open, Forested |
-| original_burn_year | Last intentional burn year | yyyy; 2010 |
-| recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |
+| burn_year_original | Last intentional burn year | yyyy; 2010 |
+| burn_year_recent | Last accidential burn date | yyyy-mm; 2025-12 |
 | plot_nr | Plot number, numeric value from 1-5. | 1-5 |
 | plotID | Unique plot ID as a combination of siteID, habitat, speciesID and plot number | LY_O_VV_1, KA_F_VM_5 |
 | species | Vascular plant taxon names follow Elven et al. (2022). We use full species names. For field sheets the names can be abbreviated (see speciesID), but the clean data should contain the full species name | *Vaccinium myrtillus* |
@@ -128,8 +128,8 @@ habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 | siteID | Unique siteID, first 2 letters of site_name. | LY, TJ |
 | geography | Location according to latitude | North, South |
 | habitat | Open habitat | Open |
-| original_burn_year | Last intentional burn year | yyyy; 2010 |
-| recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |
+| burn_year_original | Last intentional burn year | yyyy; 2010 |
+| burn_year_recent | Last accidential burn date | yyyy-mm; 2025-12 |
 | age_class | Age class of the vegetation representing post-fire successional stages. | Pioneer, Building, Mature |
 | age_classID | Age class ID of the vegetation representing post-fire successional stages. | PIO, BUI, MAT |
 | drought_treatment | Drought treatment using rain-out shelters that reduce roof cover by 0 = ambient, 60 = moderate, or 90% = extreme | Ambient, Moderate, Extreme |
@@ -150,8 +150,8 @@ habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 | site_name | Site name | Lygra |
 | siteID | Unique siteID, first 2 letters of site_name. | LY |
 | habitat | Open habitat | Open |
-| original_burn_year | Last intentional burn year | yyyy; 2010 |
-| recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |
+| burn_year_original | Last intentional burn year | yyyy; 2010 |
+| burn_year_recent | Last accidential burn date | yyyy-mm; 2025-12 |
 | age_class | Vegetation representing post-fire successional stages. | Building |
 | nitrogen_addition | Added level of nitrogen in kg ha-1 y-1 | 0, 1, 5, 10, 25 |
 | block_nr | Block number as N plus numeric value | N1, N2, N3, N4, N5 |
@@ -181,8 +181,8 @@ habitat, species and plot number: LY_O_VV_1, LY_F_VM_3
 | **LygraFire** |  |  |
 | date | Date of data collection | yyyy-mm-dd; do not split year, month and day into several columns |
 | year | Year of data collection | yyyy; sometimes there is no specific date, then year can be used |
-| original_burn_year | Last intentional burn year | yyyy; 2010 |
-| recent_burn_year | Last accidential burn date | yyyy-mm; 2025-12 |
+| burn_year_original | Last intentional burn year | yyyy; 2010 |
+| burn_year_recent | Last accidential burn date | yyyy-mm; 2025-12 |
 | site_name | Site name | Lygra, Tjotta |
 | siteID | Unique siteID, first 2 letters of site_name. | LY, TJ |
 | calluna_NiN_type | NiN type related to Calluna heathlands | e.g. |
